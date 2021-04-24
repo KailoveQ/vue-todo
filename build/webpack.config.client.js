@@ -22,7 +22,10 @@ const devServer = {
   port: 8000,
   host: '0.0.0.0',
   overlay: {
-    errors: true,
+    errors: true
+  },
+  historyApiFallback: {
+    index: '/public/index.html'
   },
   hot: true
 }

@@ -2,7 +2,11 @@
   <div id="app">
     <div id="cover"></div>
     <Header></Header>
-    <router-view/>
+    <router-link :to="{name: 'app'}">点我返回主页</router-link>
+    <router-link to="/login">点我返回登录页面</router-link>
+    <transition name="fade">
+      <router-view></router-view>
+    </transition>
     <Footer></Footer>
   </div>
 </template>

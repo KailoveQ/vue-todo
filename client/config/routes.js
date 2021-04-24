@@ -7,11 +7,29 @@ export default [
     redirect: '/app'
   },
   {
-    path: '/app',
-    component: Todo
+    path: '/app/',
+    props: true,
+    components: {
+      default: Todo,
+      a: Login
+    },
+    name: 'app',
+    meta: {
+      title: '这是增加的标题',
+      description: 'todo 应用'
+    }
+    // children: [
+    //   {
+    //     path: 'test',
+    //     component: Login
+    //   }
+    // ]
   },
   {
     path: '/login',
-    component: Login
+    components: {
+      default: Login,
+      a: Todo
+    }
   }
 ]
