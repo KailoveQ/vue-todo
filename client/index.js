@@ -11,6 +11,11 @@ const router = createRouter()
 router.beforeEach((to, from, next) => {
   console.log('before each go')
   next()
+  // if (to.fullPath === '/app') {
+  //   next({path: '/login'})
+  // } else {
+  //   next()
+  // }
 })
 
 router.beforeResolve((to, from, next) => {

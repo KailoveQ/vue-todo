@@ -14,15 +14,15 @@
 <script>
 import Header from './layout/header.vue'
 import Footer from './layout/footer.jsx'
-import Todo from './views/todo/todo.vue'
+// import Todo from './views/todo/todo.vue'
 
-console.log(Header.__docs)
+// console.log(Header.__docs)
 
 export default {
   components: {
     Header,
-    Footer,
-    Todo
+    Footer
+    // Todo
   }
 }
 </script>

@@ -1,4 +1,4 @@
-import Todo from '../views/todo/todo.vue'
+// import Todo from '../views/todo/todo.vue'
 import Login from '../views/login/login.vue'
 
 export default [
@@ -10,13 +10,17 @@ export default [
     path: '/app/',
     props: true,
     components: {
-      default: Todo,
+      default: () => import('../views/todo/todo.vue'),
       a: Login
     },
     name: 'app',
     meta: {
       title: '这是增加的标题',
       description: 'todo 应用'
+    },
+    beforeEnter (to, from, next) {
+      console.log('app beforeach go')
+      next()
     }
     // children: [
     //   {
@@ -29,7 +33,7 @@ export default [
     path: '/login',
     components: {
       default: Login,
-      a: Todo
+      a: () => import('../views/todo/todo.vue')
     }
   }
 ]
