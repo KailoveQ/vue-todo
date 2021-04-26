@@ -16,12 +16,13 @@ export default [
     name: 'app',
     meta: {
       title: '这是增加的标题',
-      description: 'todo 应用'
-    },
-    beforeEnter (to, from, next) {
-      console.log('app beforeach go')
-      next()
+      // description: 'todo 应用',
+      anhao: true
     }
+    // beforeEnter (to, from, next) {
+    //   console.log('app beforeach go')
+    //   next()
+    // }
     // children: [
     //   {
     //     path: 'test',

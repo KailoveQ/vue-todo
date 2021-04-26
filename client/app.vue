@@ -2,8 +2,9 @@
   <div id="app">
     <div id="cover"></div>
     <Header></Header>
+    <p>{{count}}</p>
     <router-link :to="{name: 'app'}">点我返回主页</router-link>
-    <router-link to="/login">点我返回登录页面</router-link>
+    <router-link to="login" >点我返回登录页面</router-link>
     <transition name="fade">
       <router-view></router-view>
     </transition>
@@ -23,6 +24,18 @@ export default {
     Header,
     Footer
     // Todo
+  },
+  mounted () {
+    console.log(this.$store)
+    let i = 1
+    setInterval(() => {
+      this.$store.commit('updateCount', i++)
+    }, 1000)
+  },
+  computed: {
+    count () {
+      return this.$store.state.count
+    }
   }
 }
 </script>
